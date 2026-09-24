@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在雨停之前 ─ Before the Rain Stops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;900&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=12">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ============ 标题画面 ============ -->
+  <div id="screen-title" class="screen">
+    <canvas id="rain-canvas"></canvas>
+    <div class="title-visual"></div>
+    <div class="title-inner">
+      <div class="title-main">
+        <div class="title-sub">── 四段相遇，四种心动 ──</div>
+        <h1 class="title-text">在雨停之前</h1>
+        <div class="title-en">BEFORE THE RAIN STOPS</div>
+      </div>
+      <nav class="title-menu">
+        <button data-act="new">开始游戏</button>
+        <button data-act="continue" class="locked">继续游戏</button>
+        <button data-act="load">读取存档</button>
+        <button data-act="gallery">结 局 鉴 赏</button>
+        <button data-act="settings">系 统 设 定</button>
+        <button data-act="true" class="hidden true-entry">◈ 雨停之后 · TRUE ROUTE</button>
+        <button data-act="extra" class="hidden extra-entry">◇ 追加日常 · 番外</button>
+      </nav>
+      <div class="title-foot">
+        <span id="ending-count"></span>
+        <span class="ver">v1.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 游戏画面 ============ -->
+  <div id="screen-game" class="screen">
+    <div id="bg-layer">
+      <div class="bg-slot bg-a"></div>
+      <div class="bg-slot bg-b"></div>
+      <div class="bg-name"></div>
+    </div>
+    <div id="char-layer">
+      <div class="char-slot char-left"><img draggable="false" alt=""></div>
+      <div class="char-slot char-right"><img draggable="false" alt=""></div>
+    </div>
+
+    <!-- 章节/路线卡 -->
+    <div id="chapter-card">
+      <div class="cc-rule"></div>
+      <div class="cc-label"></div>
+      <div class="cc-title"></div>
+      <div class="cc-hint">点击继续</div>
+    </div>
+
+    <!-- 结局卡 -->
+    <div id="ending-card">
+      <div class="ec-kind"></div>
+      <div class="ec-title"></div>
+      <div class="ec-sub">── 结局达成 ──</div>
+      <div class="ec-hint">点击返回标题</div>
+    </div>
+
+    <!-- 文本框 -->
+    <div id="text-box" class="hidden">
+      <div class="tb-speaker">
+        <span class="tb-name"></span>
+      </div>
+      <div class="tb-text"><span class="tb-content"></span><span class="tb-caret"></span></div>
+      <div class="tb-page" id="tb-page"></div>
+      <div class="tb-next"></div>
+    </div>
+
+    <!-- 选项菜单 -->
+    <div id="choice-menu" class="hidden"></div>
+
+    <!-- 系统栏 -->
+    <div id="sys-bar">
+      <button data-sys="menu" title="菜单">☰</button>
+      <button data-sys="auto" title="自动播放">AUTO</button>
+      <button data-sys="skip" title="跳过已读">SKIP</button>
+      <button data-sys="log" title="历史记录">LOG</button>
+      <button data-sys="save" title="保存">SAVE</button>
+      <button data-sys="load" title="读取">LOAD</button>
+    </div>
+
+    <!-- 点击推进层（置于最上，菜单按钮除外） -->
+    <div id="click-catcher"></div>
+  </div>
+
+  <!-- ============ 覆盖面板 ============ -->
+  <div id="overlay" class="hidden">
+    <div class="ov-panel">
+      <div class="ov-head">
+        <span class="ov-title"></span>
+        <button class="ov-close">✕</button>
+      </div>
+      <div class="ov-body"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/resources.js?v=6"></script>
+<script src="js/data.js?v=4"></script>
+<script src="js/engine.js?v=5"></script>
+<script src="js/ui.js?v=8"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
