@@ -104,6 +104,7 @@
       this.els.game.classList.remove('active');
       this.els.title.classList.add('active');
       this.els.overlay.classList.add('hidden');
+      this.els.endingCard.classList.remove('show');
       this.hideChars();
       this.rainFx.start();
       this.refreshTitle();
